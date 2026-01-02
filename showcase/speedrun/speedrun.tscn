@@ -14,7 +14,7 @@ script = ExtResource("1_upbax")
 
 [node name="SpeedRunTimer" parent="." instance=ExtResource("1_x88mr")]
 layout_mode = 1
-precision_level = 2
+precision_level = 1
 
 [node name="RichTextLabel" parent="SpeedRunTimer" index="0"]
 offset_right = 513.0

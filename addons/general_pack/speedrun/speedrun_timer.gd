@@ -8,11 +8,15 @@ enum PRECISION_LEVEL {
 
 @onready var text: RichTextLabel = $RichTextLabel
 @export var precision_level := PRECISION_LEVEL.HOURS
+@export var normal_color := Color.GREEN
+@export var stopped_color := Color.SKY_BLUE
 
-#func _ready() -> void:
-	#SpeedRun.speedrun_start
-	#SpeedRun.speedrun_stop
-	#SpeedRun.speedrun_reset
+var current_color := normal_color
+
+func _ready() -> void:
+	SpeedRun.speedrun_start.connect(set_color_normal)
+	SpeedRun.speedrun_stop.connect(set_color_stopped)
+	SpeedRun.speedrun_reset.connect(set_color_normal)
 
 
 func _process(delta: float) -> void:
@@ -23,9 +27,17 @@ func _process(delta: float) -> void:
 	var ss := (mm-floorf(mm))*60
 	var ms := (ss-floorf(ss))*100
 
+	text.text = "[color=%s]"%current_color.to_html()
 	if precision_level == PRECISION_LEVEL.HOURS:
-		text.text = "%02d:%02d:%02d,%02d"%[int(hh), int(mm), int(ss), int(ms)]
+		text.text += "%02d:%02d:%02d,%02d"%[int(hh), int(mm), int(ss), int(ms)]
 	elif precision_level == PRECISION_LEVEL.MINUTES:
-		text.text = "%02d:%02d,%02d"%[int(mm)+int(hh)*60, int(ss), int(ms)]
+		text.text += "%02d:%02d,%02d"%[int(mm)+int(hh)*60, int(ss), int(ms)]
 	elif precision_level == PRECISION_LEVEL.SECONDS:
-		text.text = "%02d,%02d"%[int(ss)+int(mm)*60+int(hh)*3600, int(ms)]
+		text.text += "%02d,%02d"%[int(ss)+int(mm)*60+int(hh)*3600, int(ms)]
+
+
+func set_color_normal():
+	current_color = normal_color
+
+func set_color_stopped():
+	current_color = stopped_color
