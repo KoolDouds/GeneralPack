@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bny32u5x0qbkd"]
+
+[ext_resource type="Script" uid="uid://cdg8x8oqr5sve" path="res://showcase/speedrun/buttons.gd" id="1_upbax"]
+[ext_resource type="PackedScene" uid="uid://c65hrkgfrs5uj" path="res://speedrun/speedrun_timer.tscn" id="1_x88mr"]
+
+[node name="Speedrun" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_upbax")
+
+[node name="SpeedRunTimer" parent="." instance=ExtResource("1_x88mr")]
+layout_mode = 1
+precision_level = 2
+
+[node name="RichTextLabel" parent="SpeedRunTimer" index="0"]
+offset_right = 513.0
+offset_bottom = 123.0
+theme_override_font_sizes/normal_font_size = 64
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 552.0
+offset_right = 187.0
+offset_bottom = 620.0
+text = "START"
+
+[node name="Stop" type="Button" parent="."]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 552.0
+offset_right = 383.0
+offset_bottom = 620.0
+text = "STOP"
+
+[node name="Reset" type="Button" parent="."]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 552.0
+offset_right = 585.0
+offset_bottom = 620.0
+text = "RESET"
+
+[editable path="SpeedRunTimer"]
