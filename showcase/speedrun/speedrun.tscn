@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bny32u5x0qbkd"]
 
 [ext_resource type="Script" uid="uid://cdg8x8oqr5sve" path="res://showcase/speedrun/buttons.gd" id="1_upbax"]
-[ext_resource type="PackedScene" uid="uid://c65hrkgfrs5uj" path="res://speedrun/speedrun_timer.tscn" id="1_x88mr"]
+[ext_resource type="PackedScene" uid="uid://c65hrkgfrs5uj" path="res://addons/general_pack/speedrun/speedrun_timer.tscn" id="1_x88mr"]
 
 [node name="Speedrun" type="Control"]
 layout_mode = 3
