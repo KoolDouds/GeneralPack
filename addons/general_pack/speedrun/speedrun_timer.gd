@@ -10,6 +10,7 @@ enum PRECISION_LEVEL {
 @export var precision_level := PRECISION_LEVEL.HOURS
 @export var normal_color := Color.GREEN
 @export var stopped_color := Color.SKY_BLUE
+@export var autostart := false
 
 var current_color := normal_color
 
@@ -17,6 +18,8 @@ func _ready() -> void:
 	SpeedRun.speedrun_start.connect(set_color_normal)
 	SpeedRun.speedrun_stop.connect(set_color_stopped)
 	SpeedRun.speedrun_reset.connect(set_color_normal)
+	if (autostart):
+		SpeedRun.start()
 
 
 func _process(delta: float) -> void:
