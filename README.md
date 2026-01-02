@@ -2,11 +2,11 @@
 
 A modular utilities pack for Godot to speedup the boring parts of game jams.
 
-**Includes** :
+**Includes** 
 
 	- Speedrun timer
 
-**Coming soon** :
+**Coming soon** 
 
 	- MainMenu/PauseMenu
 	- Dialogue
