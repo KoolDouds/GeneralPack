@@ -20,7 +20,7 @@ SpeedRun="*res://addons/general_pack/speedrun/speedrun.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/general_pack/plugin.cfg", "res://addons/general_pack/speedrun/plugin.cfg")
+enabled=PackedStringArray("res://addons/general_pack/plugin.cfg", "res://addons/general_pack/speedrun/plugin.cfg", "res://addons/kd_utils/plugin.cfg")
 
 [rendering]
 
